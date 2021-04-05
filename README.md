@@ -1,4 +1,4 @@
-# PSL_Dashboard
+# PSL Dashboard and Simple First Innings score model 
 Using PSL previous seasons data to put bet on current Matches. 
 
 PowerBI Dashboard 
@@ -12,4 +12,6 @@ PowerBI Dashboard
 
 ![ ](PSl2.gif)
 
-Model - To predict 
+Model - To predict First Inning Score.
+
+![ ](screen-capture.gif)
