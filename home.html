@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>{{title}}</title>
+    
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles8.css') }}">
+    <script src="https://use.fontawesome.com/3fa36ae73c.js"></script>
+
+    <style>
+        h1 { color: #FF585D; }
+        p {color:#FF585D}
+      </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="centered">
+            
+       <center><h1><b>First Innings Score Predictor for </b><span class="badge badge-secondary">PSL</span></h1></center>
+   
+            
+        </div>
+        </div>
+
+    <!-- Prediction Form -->
+    <div class='div2'>
+        <center><form action="{{ url_for('predict') }}" method="POST">
+
+			 <select class="form-input align-center" name="Batting">
+                <option value="none">--- Select the Batting--</option>
+                <option value="BT1">Islamabad United</option>
+                <option value="BT2">Karachi Kings</option>
+                <option value="BT3">Lahore Qalandars</option>
+                <option value="BT4">Multan Sultans</option>
+                <option value="BT5">Peshawar Zalmi</option>				
+                <option value="BT6">Quetta Gladiators</option>		
+            </select><br>
+
+            </select><br>
+			
+			 <select class="form-input align-center" name="Bowling">
+                <option value="none">--- Select the Bowling--</option>
+                <option value="BL1">Islamabad United</option>
+                <option value="BL2">Karachi Kings</option>
+                <option value="BL3">Lahore Qalandars</option>
+                <option value="BL4">Multan Sultans</option>
+                <option value="BL5">Peshawar Zalmi</option>				
+                <option value="BL6">Quetta Gladiators</option>		
+            </select><br> 			
+
+            </select><br>
+            <!-- Bowling Team Dropdown -->
+			 <select class="form-input align-center" name="Venue">
+                <option value="none">--- Select the Bowling--</option>
+                <option value="VU1">Dubai</option>
+                <option value="VU2">Gaddafi Stadium</option>
+                <option value="VU3">Multan Stadium</option>
+                <option value="VU4">National Stadium</option>
+                <option value="VU5">Rawalpindi Stadium</option>				
+                <option value="VU6">Sharjah Stadium</option>		
+                <option value="VU7">Sheikh Zayed Stadium</option>					
+            </select><br>  
+            </select><br>
+		
+	
+            <input class="form-input" type="text" name="Runs" placeholder="Runs eg 73" required><br>
+			            </select><br>
+            <input class="form-input" type="text" name="Wickets" placeholder="Wickets eg 5" required><br>
+			            </select><br>							
+			<input class="form-input" type="text" name="Overs" placeholder="Overs (>=5.0) e.g 9.4" required><br>
+			            </select><br>
+            <input class="form-input" type="text" name="5Runs" placeholder="Runs Scored in previous 5 overs eg 29" required><br>
+			            </select><br>
+            <input class="form-input" type="text" name="5Wkt" placeholder="Wickets taken in previous 5 overs eg 3" required><br>
+ 
+         </select><br>			 
+
+    <input type="submit" class="btn btn-secondary" value="Predict Score">
+    </form></center>
+    </div>
+  <!-- Result -->
+  <div class="map">
+    <center><p style="background-color:lightblue;font-size:25px" class='map-p'> <b></b></p></center>
+</div>
+
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>{{title}}</title>
+    
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles6.css') }}">
+    <script src="https://use.fontawesome.com/3fa36ae73c.js"></script>
+    <style>
+        h1 { color: #FF585D; }
+        p {color:#FF585D}
+      </style>
+
+</head>
+<body>
+    <img src="static/logo2.png" alt="HTML5 Icon"  style="width:400px;height:200px;">
+    <div class="container">
+        <div class="centered">
+            
+       <center><h1><b>Customer Churn </b><span class="badge badge-secondary">Prediction</span></h1></center>
+   
+            
+        </div>
+        </div>
+
+    <!-- Prediction Form -->
+    <div class='div2'>
+        <center><form action="{{ url_for('predict') }}" method="POST">
+            </select><br>
+			
+			<input class="form-input" type="text" name="CreditScore" placeholder="Credit Score of the Customer" required><br>
+            <input class="form-input" type="text" name="Age" placeholder="Age of Customer" required><br>
+            <input class="form-input" type="text" name="Tenure" placeholder="Customer Tenure" required><br>
+            <input class="form-input" type="text" name="Balance" placeholder="Customer Balance" required><br>
+            <input class="form-input" type="text" name="EstimatedSalary" placeholder="Customer Estimated Salary" required><br>
+			 
+			 <select class="form-input align-center" name="room">
+                <option value="none">--- Select the Country--</option>
+                <option value="France">Framce</option>
+                <option value="Germany">Germany</option>
+                <option value="Spain">Spain</option>
+            </select><br> 
+            <!-- Bowling Team Dropdown -->
+            <select class="form-input align-center" name="room">
+                <option value="none">--- Select the Gender--</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select><br> 
+    <input type="submit" class="btn btn-secondary" value="Predict Prices">
+    </form></center>
+    </div>
+    <!-- Result -->
+   <div class="results">
+        <center><p style="background-color:lightorange;font-size:18px" class='result-p'> <b>The data input into the Model {{ data}} </b></p></center>
+        <center><p style="background-color:lightorange;font-size:28px" class='result-p'> <b>This Customer is {{ my_prediction}}</b></p></center>
+    </div>
+
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
